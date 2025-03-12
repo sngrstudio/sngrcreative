@@ -1,0 +1,22 @@
+---
+export interface Props {
+  title?: string | undefined
+  description?: string | undefined
+  canonical?: string | undefined
+}
+
+const { title, description, canonical } = Astro.props
+
+const site = {
+  title: 'SNGR Creative',
+  description: 'Welcome to SNGR Creative website!'
+} satisfies Props
+---
+
+{/** Required meta tags */}
+<title>{title ? `${title} — ${site.title}` : site.title}</title>
+<meta name="description" content={description ? description : site.description} />
+<link rel="canonical" href={canonical || Astro.url} />
+
+{/** Favicon */}
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
