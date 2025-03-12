@@ -1,4 +1,6 @@
 ---
+import { getEntry } from 'astro:content'
+
 export interface Props {
   title?: string | undefined
   description?: string | undefined
@@ -7,19 +9,16 @@ export interface Props {
 
 const { title, description, canonical } = Astro.props
 
-const site = {
-  title: 'SNGR Creative',
-  description: 'Welcome to SNGR Creative website!'
-} satisfies Props
+const site = await getEntry('site', 'site')
 ---
 
 {/** Required meta tags */}
-<title>{title ? `${title} — ${site.title}` : site.title}</title>
+<title>{title ? `${title} — ${site!.data.title}` : site!.data.title}</title>
 <meta
   name='description'
-  content={description ? description : site.description}
+  content={description ? description : site!.data.description}
 />
 <link rel='canonical' href={canonical || Astro.url} />
 
 {/** Favicon */}
-<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+<link rel='icon' type='image/svg+xml' href={site!.data.favicon} />
