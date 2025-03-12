@@ -20,8 +20,9 @@
 				"astro-build.astro-vscode"
 			]
 		}
-	}
+	},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+	"runArgs": ["--env-file", ".devcontainer/.env"]
 }
