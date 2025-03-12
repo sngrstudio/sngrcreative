@@ -15,8 +15,11 @@ const site = {
 
 {/** Required meta tags */}
 <title>{title ? `${title} — ${site.title}` : site.title}</title>
-<meta name="description" content={description ? description : site.description} />
-<link rel="canonical" href={canonical || Astro.url} />
+<meta
+  name='description'
+  content={description ? description : site.description}
+/>
+<link rel='canonical' href={canonical || Astro.url} />
 
 {/** Favicon */}
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />

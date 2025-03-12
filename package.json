@@ -1,23 +1,32 @@
 {
-	"name": "sngrcreative",
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "conc bun:build && wrangler pages dev",
-		"astro": "astro",
-		"deploy": "conc bun:build && wrangler pages deploy",
-		"cf-typegen": "wrangler types",
-		"start": "conc bun:preview"
-	},
-	"dependencies": {
-		"@astrojs/cloudflare": "^12.2.4",
-		"astro": "^5.4.3"
-	},
-	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20250311.0",
-		"concurrently": "^9.1.2",
-		"wrangler": "^3.114.1"
-	}
+  "name": "sngrcreative",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "conc bun:check:* && astro build",
+    "preview": "conc bun:build && wrangler pages dev",
+    "astro": "astro",
+    "deploy": "conc bun:build && wrangler pages deploy",
+    "cf-typegen": "wrangler types",
+    "start": "conc bun:preview",
+    "format": "prettier --write .",
+    "check:style": "prettier --check .",
+    "check:astro": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.2.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250311.0",
+    "concurrently": "^9.1.2",
+    "prettier": "^3.5.3",
+    "prettier-config-standard": "^7.0.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "wrangler": "^3.114.1",
+    "astro": "^5.4.3",
+    "typescript": "^5.8.2"
+  }
 }
