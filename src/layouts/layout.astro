@@ -14,7 +14,10 @@ const {
 } = Astro.props
 ---
 
-<BaseLayout {...baseLayoutProps} class:list={['min-h-screen', className]}>
+<BaseLayout
+  {...baseLayoutProps}
+  class:list={['bg-background text-text min-h-screen', className]}
+>
   {/** Body */}
   <slot />
 

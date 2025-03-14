@@ -30,3 +30,6 @@ pnpm-debug.log*
 
 # lockfile
 bun.lock
+
+# data
+src/data
