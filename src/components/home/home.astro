@@ -1,0 +1,17 @@
+---
+import HomeComponent from './home'
+import { getEntry } from 'astro:content'
+import { Picture } from 'astro:assets'
+
+const homeData = await getEntry('home', 'home')
+---
+
+<HomeComponent>
+  <Picture
+    class='max-w-full'
+    src={homeData!.data.logo}
+    layout='responsive'
+    priority={true}
+    alt=''
+  />
+</HomeComponent>
