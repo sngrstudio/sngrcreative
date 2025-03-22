@@ -5,38 +5,26 @@
   "scripts": {
     "astro": "astro",
     "build": "conc bun:check:* && astro build",
-    "cf-typegen": "wrangler types",
     "check:astro": "astro check",
     "check:style": "prettier --check .",
-    "deploy": "conc bun:build && wrangler pages deploy",
-    "dev": "astro dev --host=0.0.0.0",
+    "dev": "astro dev",
     "format": "prettier --write .",
-    "preview": "conc bun:build && wrangler pages dev --ip=0.0.0.0",
-    "start": "conc bun:preview"
+    "preview": "astro build && wrangler pages dev",
+    "deploy": "astro build && wrangler pages deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.4",
-    "@astrojs/cloudflare": "12.3.0",
-    "@astrojs/react": "4.2.1",
-    "@keystatic/astro": "5.0.6",
-    "@keystatic/core": "0.5.46",
-    "@tailwindcss/vite": "4.0.15",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "tailwindcss": "4.0.15"
+    "@astrojs/cloudflare": "^12.3.0",
+    "astro": "5.5.4"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20250320.0",
-    "@types/bun": "1.2.5",
-    "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4",
-    "astro": "5.5.4",
+    "@astrojs/check": "0.9.4",
+    "@cloudflare/workers-types": "^4.20250321.0",
     "concurrently": "9.1.2",
     "prettier": "3.5.3",
     "prettier-config-standard": "7.0.0",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.6.11",
     "typescript": "5.8.2",
-    "wrangler": "4.3.0"
+    "wrangler": "^4.4.0"
   }
 }

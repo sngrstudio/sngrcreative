@@ -1,28 +1,19 @@
 ---
 import BaseLayout, { type Props as BaseLayoutProps } from './base.astro'
 import Meta, { type Props as MetaProps } from './meta.astro'
-import './style.css'
 
 export interface Props extends BaseLayoutProps, MetaProps {}
 
-const {
-  title,
-  description,
-  canonical,
-  class: className,
-  ...baseLayoutProps
-} = Astro.props
+const { title, description, canonical, ...props } = Astro.props
 ---
 
-<BaseLayout
-  {...baseLayoutProps}
-  class:list={['bg-background text-text min-h-screen', className]}
->
-  {/** Body */}
+<BaseLayout {...props}>
+  {/* <body> */}
   <slot />
 
-  {/** Head */}
+  {/* <head> */}
   <Fragment slot='head'>
     <Meta title={title} description={description} canonical={canonical} />
+    <slot name='head' />
   </Fragment>
 </BaseLayout>

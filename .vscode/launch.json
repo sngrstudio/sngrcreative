@@ -3,13 +3,7 @@
   "configurations": [
     {
       "command": "bun run dev",
-      "name": "Run the development server",
-      "request": "launch",
-      "type": "node-terminal"
-    },
-    {
-      "command": "bun run start",
-      "name": "Run the preview server",
+      "name": "Development server",
       "request": "launch",
       "type": "node-terminal"
     }
