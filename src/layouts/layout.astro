@@ -19,7 +19,10 @@ if (!site) {
 }
 ---
 
-<BaseLayout {...props} class:list={['min-h-screen', className]}>
+<BaseLayout
+  {...props}
+  class:list={['min-h-screen bg-theme-background text-theme-text', className]}
+>
   {/* <body> */}
   <slot />
 

@@ -16,7 +16,8 @@ export const collections = {
     loader: glob({ pattern: '**/*.json', base: 'src/content/home' }),
     schema: ({ image }) =>
       z.object({
-        logo: image()
+        logo: image(),
+        'background-image': image()
       })
   })
 }

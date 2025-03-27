@@ -55,6 +55,14 @@ export default config({
           validation: {
             isRequired: true
           }
+        }),
+        'background-image': fields.image({
+          label: 'Background Image',
+          directory: 'src/assets/home',
+          publicPath: '~/assets/home',
+          validation: {
+            isRequired: true
+          }
         })
       }
     })

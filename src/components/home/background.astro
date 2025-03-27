@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { Picture } from 'astro:assets'
+
+interface Props {
+  home: CollectionEntry<'home'>
+}
+
+const { home } = Astro.props
+---
+
+<Picture
+  class='z-[-9999] absolute inset-0 !h-screen opacity-40'
+  src={home.data['background-image']}
+  layout='full-width'
+  priority={true}
+  alt=''
+/>

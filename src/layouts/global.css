@@ -2,7 +2,14 @@
 @import '@fontsource-variable/geist';
 
 @theme {
+  /* typefaces */
   --font-sans:
     'Geist Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* colors */
+  --color-theme-background: #eef6f9;
+  --color-theme-text: #001e33;
+  --color-theme-accent: #15a1bf;
+  --color-theme-mono: #7c8386;
 }
