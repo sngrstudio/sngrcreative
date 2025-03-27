@@ -14,8 +14,9 @@ export const collections = {
 
   home: defineCollection({
     loader: glob({ pattern: '**/*.json', base: 'src/content/home' }),
-    schema: ({ image }) => z.object({
-      logo: image()
-    })
+    schema: ({ image }) =>
+      z.object({
+        logo: image()
+      })
   })
 }
