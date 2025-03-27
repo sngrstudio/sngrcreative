@@ -1,0 +1,14 @@
+---
+import HeroReact from './hero.tsx'
+import { Picture } from 'astro:assets'
+import { getEntry } from 'astro:content'
+
+const home = await getEntry('home', 'home')
+if (!home) {
+  throw new Error('No home data found.')
+}
+---
+
+<HeroReact client:load>
+  <Picture src={home.data.logo} layout='responsive' priority={true} alt='' />
+</HeroReact>

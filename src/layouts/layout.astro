@@ -2,17 +2,24 @@
 import BaseLayout, { type Props as BaseLayoutProps } from './base.astro'
 import Meta, { type Props as MetaProps } from './meta.astro'
 import { getEntry } from 'astro:content'
+import './global.css'
 
 export interface Props extends BaseLayoutProps, Omit<MetaProps, 'site'> {}
 
-const { title, description, canonical, ...props } = Astro.props
+const {
+  title,
+  description,
+  canonical,
+  class: className,
+  ...props
+} = Astro.props
 const site = await getEntry('site', 'site')
 if (!site) {
   throw new Error('No site data found.')
 }
 ---
 
-<BaseLayout {...props}>
+<BaseLayout {...props} class:list={['min-h-screen', className]}>
   {/* <body> */}
   <slot />
 

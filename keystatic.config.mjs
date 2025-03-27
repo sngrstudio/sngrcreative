@@ -41,6 +41,22 @@ export default config({
           }
         })
       }
+    }),
+
+    home: singleton({
+      label: 'Home Section',
+      path: 'src/content/home/home',
+      format: 'json',
+      schema: {
+        logo: fields.image({
+          label: 'Logo',
+          directory: 'src/assets/home',
+          publicPath: '~/assets/home',
+          validation: {
+            isRequired: true
+          }
+        })
+      }
     })
   }
 })
