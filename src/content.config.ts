@@ -4,18 +4,20 @@ import { z } from 'astro:schema'
 
 export const collections = {
   site: defineCollection({
-    loader: glob({ base: 'src/data/site', pattern: '**/*.json' }),
+    loader: glob({ pattern: '**/*.json', base: 'src/content/site' }),
     schema: z.object({
-      title: z.string(),
-      description: z.string(),
+      title: z.string().max(64),
+      description: z.string().max(160),
       favicon: z.string()
     })
   }),
+
   home: defineCollection({
-    loader: glob({ base: 'src/data/home', pattern: '**/*.json' }),
+    loader: glob({ pattern: '**/*.json', base: 'src/content/home' }),
     schema: ({ image }) =>
       z.object({
-        logo: image()
+        logo: image(),
+        'background-image': image()
       })
   })
 }

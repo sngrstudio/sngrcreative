@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Section from '../section.astro'
+import HeroReact from './hero'
+import { Picture } from 'astro:assets'
+
+interface Props {
+  home: CollectionEntry<'home'>
+}
+
+const { home } = Astro.props
+---
+
+<Section class='flex flex-col items-center justify-center'>
+  <HeroReact client:load>
+    <Picture src={home.data.logo} layout='responsive' priority={true} alt='' />
+  </HeroReact>
+</Section>

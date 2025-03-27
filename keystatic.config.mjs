@@ -1,4 +1,5 @@
 // @ts-check
+
 import { config, fields, singleton } from '@keystatic/core'
 
 export default config({
@@ -8,21 +9,27 @@ export default config({
 
   singletons: {
     site: singleton({
-      label: 'Site Settings',
-      path: 'src/data/site/site',
+      label: 'Site Configuration',
+      path: 'src/content/site/site',
       format: 'json',
       schema: {
         title: fields.text({
           label: 'Site Title',
           validation: {
-            isRequired: true
+            isRequired: true,
+            length: {
+              max: 64
+            }
           }
         }),
         description: fields.text({
           label: 'Site Description',
           multiline: true,
           validation: {
-            isRequired: true
+            isRequired: true,
+            length: {
+              max: 160
+            }
           }
         }),
         favicon: fields.image({
@@ -37,12 +44,20 @@ export default config({
     }),
 
     home: singleton({
-      label: 'Homepage Settings',
-      path: 'src/data/home/home',
+      label: 'Home Section',
+      path: 'src/content/home/home',
       format: 'json',
       schema: {
         logo: fields.image({
           label: 'Logo',
+          directory: 'src/assets/home',
+          publicPath: '~/assets/home',
+          validation: {
+            isRequired: true
+          }
+        }),
+        'background-image': fields.image({
+          label: 'Background Image',
           directory: 'src/assets/home',
           publicPath: '~/assets/home',
           validation: {
