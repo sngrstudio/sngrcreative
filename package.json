@@ -30,7 +30,7 @@
     "@types/bun": "1.4.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "astro": "5.7.4",
+    "astro": "7.2.8",
     "concurrently": "9.2.4",
     "prettier": "3.9.8",
     "prettier-config-standard": "7.0.0",
